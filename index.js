@@ -5,7 +5,10 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan  from "morgan";
-import kpiRoutes from "./routes/kpi.js"
+import kpiRoutes from "./routes/kpi.js";
+import KPI from  "./models/KPI.js";
+import { kpis } from "./data/data.js";
+
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -28,7 +31,11 @@ const PORT = process.env.PORT || 9000;
 mongoose.connect(process.env.MONGO_URL)
 .then(async () => {
     app.listen(PORT,  () => console.log(`Server running on port: ${PORT}`))
-})
-.catch((error) => console.log(`${error} did not connect`))
 
- 10
+    /* APP DATA ONE TIME ONLY OR AS NEED */
+    // await mongoose.connection.db.dropDatabase();
+    // KPI.insertMany(kpis).catch((err) => console.error(err)).finally(() => {
+    //     console.log('Data added to database');
+    //     });
+    })
+.catch((error) => console.log(`${error} did not connect`));

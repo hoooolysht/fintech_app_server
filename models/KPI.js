@@ -10,12 +10,12 @@ const daySchema = new Schema(
         revenue: {
             type: mongoose.Types.Currency,
             currency: "USD",
-            get: (v) = v/100,
+            get: (v) => v/100,
         },
         expenses: {
             type: mongoose.Types.Currency,
             currency: "USD",
-            get: (v) = v/100,
+            get: (v) => v/100,
         },
     },
     { toJSON: { getters: true }}
@@ -27,22 +27,22 @@ const monthSchema = new Schema(
         revenue: {
             type: mongoose.Types.Currency,
             currency: "USD",
-            get: (v) = v/100,
+            get: (v) => v/100,
         },
         expenses: {
             type: mongoose.Types.Currency,
             currency: "USD",
-            get: (v) = v/100,
+            get: (v) => v/100,
         },
         operationExpenses: {
             type: mongoose.Types.Currency,
             currency: "USD",
-            get: (v) = v/100,
+            get: (v) => v/100,
         },
         nonOperationExpenses: {
             type: mongoose.Types.Currency,
             currency: "USD",
-            get: (v) = v/100,
+            get: (v) => v/100,
         },
     },
     { toJSON: { getters: true }}
@@ -52,24 +52,24 @@ const KPISchema = new Schema({
     totalProfit: {
         type: mongoose.Types.Currency,
         currency: "USD",
-        get: (v) = v/100,
+        get: (v) => v/100,
     },
     totalRevenue: {
         type: mongoose.Types.Currency,
         currency: "USD",
-        get: (v) = v/100,
+        get: (v) => v/100,
     },
     totalExpenses: {
         type: mongoose.Types.Currency,
         currency: "USD",
-        get: (v) = v/100,
+        get: (v) => v/100,
     },
     expensesByCategory: {
         type: Map,
         of: {
             type: mongoose.Types.Currency,
             currency: "USD",
-            get: (v) = v/100,
+            get: (v) => v/100,
         },
     },
     monthlyData: [monthSchema],

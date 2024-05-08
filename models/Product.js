@@ -4,7 +4,7 @@ import { loadType } from "mongoose-currency";
 const Schema = mongoose.Schema;
 loadType(mongoose);
 
-const ProductScema = new Schema(
+const ProductSchema = new Schema(
   {
     price: {
       type: mongoose.Types.Currency,
@@ -26,6 +26,6 @@ const ProductScema = new Schema(
   { timestamps: true, toJSON: { getters: true } }
 );
 
-const Product = mongoose.model("Product", ProductScema);
+const Product = mongoose.model("Product", ProductSchema);
 
 export default Product;

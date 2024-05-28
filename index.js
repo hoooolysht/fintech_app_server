@@ -39,18 +39,20 @@ mongoose
 
     /* APP DATA ONE TIME ONLY OR AS NEED */
     // await mongoose.connection.db.dropDatabase();
-    // KPI.insertMany(kpis).catch((err) => console.error(err)).finally(() => {
-    //     console.log('Data added to database');
-    //     });
+    // KPI.insertMany(kpis)
+    //   .catch((err) => console.error(err))
+    //   .finally(() => {
+    //     console.log("KPI Data added to database");
+    //   });
     // Product.insertMany(products)
     //   .catch((err) => console.error(err))
     //   .finally(() => {
-    //     console.log("Data added to database");
+    //     console.log("Product Data added to database");
     //   });
     // Transaction.insertMany(transactions)
     //   .catch((err) => console.error(err))
     //   .finally(() => {
-    //     console.log("Data added to database");
+    //     console.log("Transaction Data added to database");
     //   });
   })
   .catch((error) => console.log(`${error} did not connect`));
